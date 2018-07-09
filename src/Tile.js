@@ -51,14 +51,14 @@ class Tile extends Component {
         <div className='temp-hi'>
           <span>
             <span className='arrow'>↑</span>
-            {this.props.tempHi}
+            <span className='temp'>{this.props.tempHi}</span>
             <span className='faren'>°f</span>
           </span>
         </div>
         <div className='temp-lo'>
           <span>
             <span className='arrow'>↓</span>
-            {this.props.tempLo}
+            <span className='temp'>{this.props.tempLo}</span>
             <span className='faren'>°f</span>
           </span>
         </div>
