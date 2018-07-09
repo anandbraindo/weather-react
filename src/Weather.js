@@ -60,7 +60,7 @@ class Weather extends Component {
     fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/5d3be07092ef4acee7b0432f8d7f8a2b/${coords}`)
     .then(response => response.json())
     .then(forecast => { console.log(forecast.daily)
-      this.setState(prevState => ({
+      this.setState(() => ({
                                   currently: forecast.currently,
                                   lat: forecast.latitude,
                                   lon: forecast.longitude,
