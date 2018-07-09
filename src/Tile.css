@@ -1,0 +1,49 @@
+.tile {
+  color: #2d2d2d;
+  width: 200px;
+  height: 300px;
+  text-align: center;
+  border:1px solid #2d2d2d;
+  border-radius: 10px;
+  padding: 10px;
+  display: inline-block;
+  background-color: #fafafa;
+  margin: 10px;
+}
+
+span.day{
+  font-size: 26px;
+}
+
+.temp-hi {
+  float: left;
+  padding-top: 20px;
+  padding-left: 10px;
+  font-size: 18px;
+}
+.temp-lo {
+  float: right;
+  padding-top: 20px;
+  padding-right: 10px;
+  font-size: 18px;
+}
+
+.arrow {
+  display: inline-block;
+  margin-top: 6px;
+  margin-right: 2px;
+  font-size: 10px;
+  vertical-align: top;
+}
+.faren {
+  margin-top: 1px;
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.img img{
+  width: 100%;
+  height: auto;
+  margin: 10px auto;
+}
