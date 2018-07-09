@@ -10,7 +10,7 @@ const RowOfTiles = (props) => {
       dots: true,
       infinite: false,
       arrows:false,
-      speed: 750,
+      speed: 250,
       slidesToShow: 1,
       slidesToScroll: 1
   };
