@@ -18,7 +18,7 @@ const RowOfTiles = (props) => {
   return (
   <Slider {...sliderSettings}>
         {props.daily.data.map((day, index) => 
-        <Tile day={(new Date(day.time*1000)).toString().substring(0,3)} 
+        <Tile day={index===0 ? 'Today' : (new Date(day.time*1000)).toString().substring(0,3)} 
               tempHi={Math.floor(day.temperatureHigh)} 
               tempLo={Math.floor(day.temperatureLow)}
               icon={day.icon}
