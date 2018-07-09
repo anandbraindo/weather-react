@@ -9,10 +9,10 @@ class App extends Component {
   render() {
     return (
         <Router>
-      <div className='App'>
-          <Route exact path='/' component={Prompt}/>
-          <Route path='/:coords/:zip' component={({match}) => <Weather coords={match.params.coords} zip={match.params.zip}/>}/>
-      </div>
+          <div className='App'>
+              <Route exact path='/' component={Prompt}/>
+              <Route path='/:coords/:zip' component={({match}) => <Weather coords={match.params.coords} zip={match.params.zip}/>}/>
+          </div>
         </Router>
     );
   }
