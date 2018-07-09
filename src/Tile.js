@@ -45,8 +45,9 @@ class Tile extends Component {
       <div className="tile">
         <span className='day'>{this.props.day}</span>
         <div className='img'>
-          <img src={this.pickIcon(this.props.icon)}></img>
+          <img src={this.pickIcon(this.props.icon)} alt={this.props.icon}></img>
         </div>
+        <span className='summary'>{this.props.summary}</span>
         <div className='temp-hi'>
           <span>
             <span className='arrow'>↑</span>

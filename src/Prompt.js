@@ -18,7 +18,7 @@ class Prompt extends Component {
     return (
       <div className='prompt'>
           <h1>Probably Accurate Weather</h1>
-          <input className='zip-input'type='text'/>
+          <input className='zip-input' type='text' placeholder='enter a zipcode'/>
           <button className='search-button' onClick={() => {this.pushCoords()}}>Search</button>
           <div className='dis'>
             <span>(zipcodes only please!)</span>

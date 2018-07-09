@@ -22,6 +22,7 @@ const RowOfTiles = (props) => {
               tempHi={Math.floor(day.temperatureHigh)} 
               tempLo={Math.floor(day.temperatureLow)}
               icon={day.icon}
+              summary={day.summary}
               key={index}/>
         )}
   </Slider>
@@ -54,6 +55,7 @@ class Weather extends Component {
         }))
       });
   }
+
   grabForecast(coords) {
     fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/5d3be07092ef4acee7b0432f8d7f8a2b/${coords}`)
     .then(response => response.json())

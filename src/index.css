@@ -13,6 +13,7 @@ font-family: 'Muli', sans-serif;
   color: #fafafa;
   height: auto;
   padding: 20px 0px;
+  border-bottom: 1px solid black; 
 }
 
 .top .summary {
@@ -63,4 +64,8 @@ font-family: 'Muli', sans-serif;
 
 .state-zip {
   font-size: 20px;
+}
+
+.slick-dots li button:before {
+  font-size: 13px;
 }
