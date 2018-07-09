@@ -40,7 +40,7 @@ class Weather extends Component {
                       temperatureLow: 0,
                     icon: ''}],
               summary: ''},
-      fa: ''
+      formatted_address: ''
     };
     this.grabForecast(this.props.coords);
     this.grabZipInfo(this.props.zip);
@@ -51,7 +51,7 @@ class Weather extends Component {
       .then(response => response.json())
       .then(info => {
         this.setState(() => ({
-          fa: info.results[0].formatted_address.split(', ')
+          formatted_address: info.results[0].formatted_address.split(', ')
         }))
       });
   }
@@ -59,8 +59,7 @@ class Weather extends Component {
   grabForecast(coords) {
     fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/5d3be07092ef4acee7b0432f8d7f8a2b/${coords}`)
     .then(response => response.json())
-    .then(forecast => { console.log(forecast.daily)
-      this.setState(() => ({
+    .then(forecast => { this.setState(() => ({
                                   currently: forecast.currently,
                                   lat: forecast.latitude,
                                   lon: forecast.longitude,
@@ -73,8 +72,8 @@ class Weather extends Component {
     return (
       <div className='weather'>
         <div className='top'>
-          <span>{this.state.fa[0]}</span>
-          <span className='state-zip'>{this.state.fa[1]}</span>
+          <span>{this.state.formatted_address[0]}</span>
+          <span className='state-zip'>{this.state.formatted_address[1]}</span>
           <div className='summary'>{this.state.daily.summary}</div>
         </div>
         <div className='middle'>
