@@ -1,11 +1,11 @@
 import React, { Component } from 'react'; 
 import Tile from './Tile';
 import Slider from "react-slick";
-import './index.css';
+import './Weather.css';
 
 
 
-const RowOfTiles = (props) => {
+const SliderOfTiles = (props) => {
   var sliderSettings = {
       dots: true,
       infinite: false,
@@ -59,7 +59,7 @@ class Weather extends Component {
   grabForecast(coords) {
     fetch(`https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/5d3be07092ef4acee7b0432f8d7f8a2b/${coords}`)
     .then(response => response.json())
-    .then(forecast => { this.setState(() => ({
+    .then(forecast => {this.setState(() => ({
                                   currently: forecast.currently,
                                   lat: forecast.latitude,
                                   lon: forecast.longitude,
@@ -77,7 +77,7 @@ class Weather extends Component {
           <div className='summary'>{this.state.daily.summary}</div>
         </div>
         <div className='middle'>
-          <RowOfTiles daily={this.state.daily}/>
+          <SliderOfTiles daily={this.state.daily}/>
         </div>
       </div>
     );

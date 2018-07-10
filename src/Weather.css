@@ -1,0 +1,46 @@
+.weather {
+    height: 100%;
+}
+
+.top {
+    font-family: 'Muli', sans-serif;
+    font-size: 60px;
+    text-align: center;
+    background-color: #545454;
+    color: #fafafa;
+    height: auto;
+    padding: 20px 0px;
+    border-bottom: 1px solid black;
+}
+
+.top .summary {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.middle {
+    padding-top: 25px;
+    font-family: 'Muli', sans-serif;
+    text-align: center;
+}
+
+.bottom {
+    text-align: center;
+}
+
+.weather .top span {
+    display: block;
+}
+
+.state-zip {
+    font-size: 20px;
+}
+
+.slick-dots li button:before {
+    font-size: 13px;
+}
+
+ul.slick-dots {
+    position: relative;
+}

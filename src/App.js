@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Weather from './Weather';
 import Prompt from './Prompt';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import './index.css';
 
 
 class App extends Component {
