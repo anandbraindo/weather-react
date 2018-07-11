@@ -11,6 +11,12 @@ import wind from './images/wind.svg';
 import './Tile.css';
 
 class Tile extends Component {
+  constructor() {
+    super()
+    this.state = {
+        flipped: false
+    };
+  }
 
   pickIcon(icon) {
     switch (icon) {
@@ -41,28 +47,53 @@ class Tile extends Component {
   }
 
   render() {
+    let tileContent;
+
+    if (this.state.flipped) {
+      tileContent = <div>
+                      <div>{this.props.data.precipProbability}</div>
+                      <div>{this.props.data.cloudCover}</div>
+                      <div>{this.props.data.humidity}</div>
+                      <div>{this.props.data.sunriseTime}</div>
+                      <div>{this.props.data.sunsetTime}</div>
+                      <div>{this.props.data.temperatureHighTime}</div>
+                      <div>{this.props.data.temperatureLowTime}</div>
+                    </div>
+    }
+    else{
+      tileContent = <div>
+                      <span className='day'>{this.props.place===0 ? 'Today' : (new Date(this.props.data.time*1000)).toString().substring(0,3)} </span>
+                      <div className='img'>
+                          <img src={this.pickIcon(this.props.data.icon)} alt={this.props.data.icon}></img>
+                      </div>
+                      <div className='temps'>
+                        <div className='temp-hi'>
+                            <span className='arrow'>↑</span>
+                            <span className='temp'>{Math.floor(this.props.data.temperatureHigh)}</span>
+                            <span className='faren'>°f</span>
+                        </div>
+                        <div className='temp-lo'>
+                            <span className='arrow'>↓</span>
+                            <span className='temp'>{Math.floor(this.props.data.temperatureLow)}</span>
+                            <span className='faren'>°f</span>
+                        </div>
+                      </div>
+                      <div className='summary'>
+                        <span>{this.props.data.summary}</span>
+                      </div>
+                      <div className='more'>
+                        <span>more info</span>
+                      </div>
+                    </div>
+      
+    }
+
     return (
-      <div className="tile">
-        <span className='day'>{this.props.day}</span>
-        <div className='img'>
-          <img src={this.pickIcon(this.props.icon)} alt={this.props.icon}></img>
+      <button className="tile-button-container" onClick={() => {this.setState(() => ({flipped: !this.state.flipped}))}}>
+        <div className="tile">
+          {tileContent}
         </div>
-        <span className='summary'>{this.props.summary}</span>
-        <div className='temp-hi'>
-          <span>
-            <span className='arrow'>↑</span>
-            <span className='temp'>{this.props.tempHi}</span>
-            <span className='faren'>°f</span>
-          </span>
-        </div>
-        <div className='temp-lo'>
-          <span>
-            <span className='arrow'>↓</span>
-            <span className='temp'>{this.props.tempLo}</span>
-            <span className='faren'>°f</span>
-          </span>
-        </div>
-      </div>
+      </button>
     );
   }
 }

@@ -2,6 +2,10 @@ span.day{
   font-size: 36px;
   font-family: 'Pacifico', cursive;
 }
+button {
+  border: none;
+  background: none;
+}
 
 .tile {
   color: #2d2d2d;
@@ -16,17 +20,17 @@ span.day{
   margin: 10px;
 }
 
+.temps {
+  overflow: auto;
+}
+
 .temp-hi {
   float: left;
-  padding-top: 20px;
-  padding-left: 10px;
   font-size: 18px;
 }
 
 .temp-lo {
   float: right;
-  padding-top: 20px;
-  padding-right: 10px;
   font-size: 18px;
 }
 
@@ -45,6 +49,10 @@ span.day{
   vertical-align: top;
 }
 
+.img {
+  margin: -50px;
+}
+
 .img img{
   width: 85%;
   height: auto;
@@ -56,4 +64,12 @@ span.day{
   font-family: 'Pacifico', cursive;
   text-align: center;
   font-size: 14px;
+  height: 45px;
+  padding: 5px 10px 0px 10px;
+}
+
+
+.more span {
+  float: right;
+  color : lightgray;
 }
