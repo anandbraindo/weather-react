@@ -70,6 +70,23 @@ button {
 
 
 .more span {
+  font-family: 'Pacifico', cursive;
   float: right;
   color : lightgray;
+}
+
+.cursive {
+  font-family: 'Pacifico', cursive;
+  font-size: 14px;
+  float:left;
+}
+
+.flipped {
+  margin: 70px auto;
+  width: 125px;
+  text-align: right;
+}
+
+.flipped div {
+  height: 25px;
 }

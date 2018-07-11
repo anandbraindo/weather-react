@@ -43,25 +43,35 @@ class Tile extends Component {
       default:
         return clearDay;
     }
+  }
 
+  parseTime(utc) {
+    return this.ampm(new Date(utc*1000).toString().substring(16,21).replace(/^0+/, ''));
+  }
+
+  ampm(time) {
+    if(parseInt(time.split(':')[0], 10) > 12){
+      return (parseInt(time.split(':')[0], 10) % 12).toString() + ':' + time.split(':')[1] + ' PM'
+    }
+    else {
+      return time += ' AM'
+    }
   }
 
   render() {
     let tileContent;
 
     if (this.state.flipped) {
-      tileContent = <div>
-                      <div>{this.props.data.precipProbability}</div>
-                      <div>{this.props.data.cloudCover}</div>
-                      <div>{this.props.data.humidity}</div>
-                      <div>{this.props.data.sunriseTime}</div>
-                      <div>{this.props.data.sunsetTime}</div>
-                      <div>{this.props.data.temperatureHighTime}</div>
-                      <div>{this.props.data.temperatureLowTime}</div>
+      tileContent = <div className='flipped'>
+                      <div><span><span className='cursive'>Chance of rain:  </span> {Math.floor(this.props.data.precipProbability*100)}%</span></div>
+                      <div><span><span className='cursive'>Cloud cover:  </span> {Math.floor(this.props.data.cloudCover*100)}%</span></div>
+                      <div><span><span className='cursive'>Humidity:  </span> {Math.floor(this.props.data.humidity*100)}%</span></div>
+                      <div><span><span className='cursive'>Sunrise:  </span> {this.parseTime(this.props.data.sunriseTime)}</span></div>
+                      <div><span><span className='cursive'>Sunset:  </span> {this.parseTime(this.props.data.sunsetTime)}</span></div>
                     </div>
     }
     else{
-      tileContent = <div>
+      tileContent = <div className='unflipped'>
                       <span className='day'>{this.props.place===0 ? 'Today' : (new Date(this.props.data.time*1000)).toString().substring(0,3)} </span>
                       <div className='img'>
                           <img src={this.pickIcon(this.props.data.icon)} alt={this.props.data.icon}></img>
