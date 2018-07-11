@@ -77,14 +77,18 @@ button {
 
 .cursive {
   font-family: 'Pacifico', cursive;
-  font-size: 14px;
   float:left;
+  font-size: 14px;
 }
 
 .flipped {
   margin: 70px auto;
   width: 125px;
   text-align: right;
+}
+.flipped span{
+  font-size: 12px;
+  line-height: 12px;
 }
 
 .flipped div {
