@@ -8,7 +8,7 @@ class Prompt extends Component {
     if(zip===''){
       window.alert('gimme a zip yo');
     }
-    else if (/^\d{5}$/.test(zip)) {
+    else if (/^\d{5}$/.test(zip)) { // Tests for exactly 5 digits in a row
       fetch(`https://cors-anywhere.herokuapp.com/http://maps.googleapis.com/maps/api/geocode/json?address=${zip}`)
       .then(response => response.json())
       .then(loc => {
@@ -18,6 +18,7 @@ class Prompt extends Component {
     else
       window.alert('where you wanna see weather tho?');
   }
+
   render() {
     return (
       <div className='prompt'>

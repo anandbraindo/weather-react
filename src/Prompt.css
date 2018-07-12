@@ -32,5 +32,8 @@
     background-color: transparent;
     border: 5px solid white;
     border-radius: 5px;
+}
 
+.search-button:active{
+    transform: scale(.95);
 }
