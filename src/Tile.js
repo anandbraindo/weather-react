@@ -34,9 +34,7 @@ class Tile extends Component {
         return partlyCloudyNight;
       case 'rain':
         return rain;
-      case 'sleet':
-        return snow;
-      case 'snow':
+      case 'sleet' || 'snow':
         return snow;
       case 'wind':
         return wind;
