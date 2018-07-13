@@ -20,20 +20,6 @@ class Weather extends Component {
     };
     this.grabForecast(this.props.coords);
     this.grabZipInfo(this.props.zip);
-    this.listenForLeftRight = this.listenForLeftRight.bind(this);
-  }
-
-  listenForLeftRight(event) {
-    switch (event) {
-      case event.keyCode===37:
-        this.slider.slickPrev()
-        break;
-      case event.keyCode===39:
-        this.slider.slickNext()
-        break;
-      default:
-        break;
-    }
   }
 
   grabZipInfo(zip) {
@@ -68,7 +54,7 @@ class Weather extends Component {
       slidesToScroll: 1
     };
     return (
-      <div className='weather' onKeyPress={e => this.listenForLeftRight(e)}>
+      <div className='weather'>
         <div className='top'>
           <span>{this.state.formatted_address[0]}</span>
           <span className='state-zip'>{this.state.formatted_address[1]}</span>
