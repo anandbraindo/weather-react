@@ -1,7 +1,3 @@
-.weather {
-    height: 100%;
-}
-
 .top {
     font-family: 'Muli', sans-serif;
     font-size: 60px;
@@ -24,8 +20,8 @@
     text-align: center;
 }
 
-.bottom {
-    text-align: center;
+.weather {
+    height: 100%;
 }
 
 .weather .top span {
@@ -40,6 +36,10 @@
     font-size: 13px;
 }
 
-ul.slick-dots {
+.slick-dots {
     position: relative;
+}
+
+.bottom {
+    text-align: center;
 }

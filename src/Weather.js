@@ -1,28 +1,9 @@
 import React, { Component } from 'react'; 
+import MediaQuery from 'react-responsive';
 import Tile from './Tile';
+import Desktop from './Desktop';
 import Slider from "react-slick";
 import './Weather.css';
-
-
-
-const SliderOfTiles = (props) => {
-  var sliderSettings = {
-      dots: true,
-      infinite: false,
-      arrows:false,
-      speed: 250,
-      slidesToShow: 1,
-      slidesToScroll: 1
-  };
-  
-  return (
-  <Slider {...sliderSettings}>
-        {props.daily.data.map((day, index) => 
-        <Tile data={day} place={index} key={index}/>
-        )}
-  </Slider>
-  );
-}
 
 
 
@@ -39,6 +20,20 @@ class Weather extends Component {
     };
     this.grabForecast(this.props.coords);
     this.grabZipInfo(this.props.zip);
+    this.listenForLeftRight = this.listenForLeftRight.bind(this);
+  }
+
+  listenForLeftRight(event) {
+    switch (event) {
+      case event.keyCode===37:
+        this.slider.slickPrev()
+        break;
+      case event.keyCode===39:
+        this.slider.slickNext()
+        break;
+      default:
+        break;
+    }
   }
 
   grabZipInfo(zip) {
@@ -64,15 +59,34 @@ class Weather extends Component {
   }
 
   render() {
+    var sliderSettings = {
+      dots: true,
+      infinite: false,
+      arrows: false,
+      speed: 250,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
     return (
-      <div className='weather'>
+      <div className='weather' onKeyPress={e => this.listenForLeftRight(e)}>
         <div className='top'>
           <span>{this.state.formatted_address[0]}</span>
           <span className='state-zip'>{this.state.formatted_address[1]}</span>
           <div className='summary'>{this.state.daily.summary}</div>
         </div>
         <div className='middle'>
-          <SliderOfTiles daily={this.state.daily}/>
+          <MediaQuery maxDeviceWidth={1224}>
+            <Slider ref={c => (this.slider = c)} {...sliderSettings}>
+              {this.state.daily.data.map((day, index) => 
+                <Tile data={day} place={index} key={index}/> // This line doesn't work when wrapped in brackets. Why?
+              )}
+            </Slider>
+          </MediaQuery>
+          <MediaQuery minDeviceWidth={1224}>
+            <div className='desktop'>
+              <Desktop props={{...this.state}}/> 
+            </div>
+          </MediaQuery>
         </div>
       </div>
     );
