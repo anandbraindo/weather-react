@@ -70,6 +70,8 @@
 }
 
 .more span {
+  position: relative;
+  top: 15px;
   font-family: 'Pacifico', cursive;
   float: right;
   color : lightgray;
