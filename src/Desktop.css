@@ -1,0 +1,47 @@
+.desktop-tile {
+    color: #2d2d2d;
+    width: 800px;
+    height: 550px;
+    text-align: center;
+    border: 1px solid #2d2d2d;
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+    background-color: #fafafa;
+    margin: 10px;
+}
+
+.city {
+    float: left;
+}
+.temp {
+    float: right;
+}
+
+.top-container {
+    overflow: auto;
+    height: auto;
+}
+
+.chart {
+    margin: 0px auto;
+    height: auto; 
+}
+
+.chart canvas {
+    display: inline-block;
+}
+
+.desktop-temp {
+    font-size: 32px;
+}
+
+.desktop-summary {
+    margin: 5px 0px;
+    display: block;
+    font-family: 'Pacifico', cursive;
+}
+
+.mini-tiles {
+    margin-top: 27px;
+}
