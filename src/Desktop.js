@@ -10,7 +10,9 @@ class Desktop extends Component {
   }
 
   parseTime(time) {
-    return (new Date(time*1000).getHours())%12;
+    let hour = (new Date(time*1000).getHours());
+    hour = hour > 12 ? (hour % 12).toString() + ' PM' : (hour % 12).toString() + ' AM'
+    return hour;
   }
 
   render() {
@@ -33,7 +35,7 @@ class Desktop extends Component {
         pointHoverBackgroundColor: 'rgba(244,72,66,1)',
         pointHoverBorderColor: 'rgba(220,220,220,1)',
         pointHoverBorderWidth: 2,
-        pointRadius: 1,
+        pointRadius: 2,
         pointHitRadius: 10,
         data: ''
       }]
@@ -41,6 +43,9 @@ class Desktop extends Component {
 
     data.labels = this.props.hourly.data.slice(0,25).map((hour)=>{return this.parseTime(hour.time)});
     data.datasets[0].data = this.props.hourly.data.map((hour)=>{return hour.temperature});
+    // data.datasets[1] = {};
+    // data.datasets[1].label = 'Precipitation';
+    // data.datasets[1].data = this.props.hourly.data.map((hour)=>{return hour.precipProbability*100});
 
     return (
       <div className="desktop-tile">
