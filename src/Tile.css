@@ -11,11 +11,11 @@
 .tile {
   color: #2d2d2d;
   width: 200px;
-  height: 300px;
+  min-height: 300px;
   text-align: center;
   border:1px solid #2d2d2d;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 10px 20px 10px;
   display: inline-block;
   background-color: #fafafa;
   margin: 10px;
