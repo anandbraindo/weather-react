@@ -7,14 +7,15 @@
     border-radius: 10px;
     padding: 10px;
     display: inline-block;
-    background-color: #fafafa;
+    background-color: #fcfeff;
     margin: 10px;
 }
 
 .city {
     float: left;
 }
-.temp {
+
+.desktop-tile .temp {
     float: right;
 }
 
