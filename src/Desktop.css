@@ -21,7 +21,11 @@
 
 .top-container {
     overflow: auto;
-    height: auto;
+    height: 80px;
+}
+
+.currently {
+    overflow: auto;
 }
 
 .chart {
@@ -34,13 +38,27 @@
 }
 
 .desktop-temp {
+    font-size: 56px;
+    float: left;
+    padding: 0px 10px;
+    line-height: auto;
+}
+
+.desktop-temp .far {
     font-size: 32px;
+    float: right;
+    position: relative;
+    top: 8px;
 }
 
 .desktop-summary {
     margin: 5px 0px;
+    font-size: 24px;
     display: block;
     font-family: 'Pacifico', cursive;
+    float: right;
+    position: relative;
+    top: 5px;
 }
 
 .mini-tiles {
