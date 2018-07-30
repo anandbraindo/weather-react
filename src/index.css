@@ -9,5 +9,57 @@ body {
   padding: 0;
 }
 
+.prompt-container {
+  text-align: center;
+}
+
+.header {
+  font-family: 'Muli', sans-serif;
+  text-align: center;
+  background-color: #545454;
+  color: #fafafa;
+  height: auto;
+  padding: 20px 0px;
+  border-bottom: 1px solid black;
+}
+
+.header h1 {
+    font-size: 60px;
+}
+
+.header h2 {
+  font-size: 20px;
+}
+
+.header h4 {
+  font-size: 12px;
+}
+
+.data {
+  padding-top: 10px;
+  font-family: 'Muli', sans-serif;
+  text-align: center;
+  color: #2d2d2d;
+  text-align: center;
+}
+
+.weather {
+  height: 100%;
+}
+
+.weather .top span {
+  display: block;
+}
 
 
+.slick-dots li button:before {
+  font-size: 13px;
+}
+
+.slick-dots {
+  margin: 0px;
+}
+
+.bottom {
+  text-align: center;
+}

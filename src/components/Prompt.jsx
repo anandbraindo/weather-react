@@ -1,5 +1,4 @@
 import React, { Component } from 'react'; 
-import './Prompt.css';
 
 
 class Prompt extends Component {
@@ -28,10 +27,14 @@ class Prompt extends Component {
 
   render() {
     return (
-      <div className='prompt'>
-          <h1>Weather!</h1>
-          <input className='zip-input' onKeyPress={e => {this.listenForEnter(e)}} ref='zipInput' type='text' placeholder='enter zip'/>
-          <button className='search-button' onClick={() => {this.pushCoords()}}>Search</button>
+      <div className='container'>
+          <div className="row">
+            <div className="col prompt-container">
+              <div className="jumbotron">Weather!</div>
+              <input className='zip-input' onKeyPress={e => {this.listenForEnter(e)}} ref='zipInput' type='text' placeholder='enter zip'/>
+              <button className='search-button' onClick={() => {this.pushCoords()}}>Search</button>
+            </div>
+          </div>
       </div>
     );
   }

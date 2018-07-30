@@ -1,18 +1,18 @@
 import React, { Component } from 'react'; 
+import {BrowserRouter, Route} from 'react-router-dom';
 import Weather from './Weather';
 import Prompt from './Prompt';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div className='App'>
+      <BrowserRouter>
+        <div className='app-router'>
           <Route exact path='/' component={Prompt}/>
-          <Route path='/:coords/:zip' component={({match}) => <Weather coords={match.params.coords} zip={match.params.zip}/>}/>
+          <Route path='/:coords/:zip' component={({match}) => <Weather {...match.params}/>}/>
         </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }

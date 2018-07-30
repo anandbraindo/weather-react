@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import clearDay from './images/clear-day.svg';
-import clearNight from './images/clear-night.svg';
-import cloudy from './images/cloudy.svg';
-import fog from './images/fog.svg';
-import partlyCloudyDay from './images/partly-cloudy-day.svg';
-import partlyCloudyNight from './images/partly-cloudy-night.svg';
-import rain from './images/rain.svg';
-import snow from './images/snow.svg';
-import wind from './images/wind.svg';
+import clearDay from '../images/clear-day.svg';
+import clearNight from '../images/clear-night.svg';
+import cloudy from '../images/cloudy.svg';
+import fog from '../images/fog.svg';
+import partlyCloudyDay from '../images/partly-cloudy-day.svg';
+import partlyCloudyNight from '../images/partly-cloudy-night.svg';
+import rain from '../images/rain.svg';
+import snow from '../images/snow.svg';
+import wind from '../images/wind.svg';
 import './Tile.css';
 
 class Tile extends Component {
