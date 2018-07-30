@@ -3,7 +3,6 @@ import Graph from "./Graph";
 import Tile from "./Tile";
 
 
-
 class Weather extends Component {
   constructor(props) {
     super(props);
@@ -47,36 +46,37 @@ class Weather extends Component {
 
   render() {
     return (
-      <div className='container weather'>
+      <div>
         <div className='jumbotron header'>
           <h1>{this.state.city_name}</h1>
           <h2>{this.state.state_zip}</h2>
           <h4>{this.state.daily.summary}</h4>
         </div>
-
-        <div className="row data">
-          <div className="col desktop-tile">
-            <div className="col-sm-6">
-              <span className='desktop-temp'>{Math.round(this.state.currently.temperature)}<span className='far'>°f</span></span>
-            </div>
-            <div className="col-sm-6">
-              <span className='desktop-summary'>{this.state.hourly.summary}</span>
+        <div className='container weather'>
+  
+          <div className="row data">
+            <div className="col desktop-tile">
+              <div className="col-sm-2">
+                <span className='desktop-temp'>{Math.round(this.state.currently.temperature)}<span className='far'>°f</span></span>
+              </div>
+              <div className="col-sm-10">
+                <span className='desktop-summary cursive'>{this.state.hourly.summary}</span>
+              </div>
             </div>
           </div>
+  
+          <div className="row graph">
+              <Graph {...this.state.hourly} />
+          </div>
+  
+          <div className="row seven-cols tiles">
+            {this.state.daily.data.slice(1).map((day, index) =>
+              <div className="col-sm-1 tile-container">
+                <Tile data={day} place={index} key={index} /> 
+              </div>
+            )}
+          </div>
         </div>
-
-        <div className="row graph">
-          <Graph {...this.state.hourly} />
-        </div>
-
-        <div className="row tiles">
-          {this.state.daily.data.slice(1).map((day, index) =>
-            <div className="col-xs-6 col-sm-3">
-              <Tile data={day} place={index} key={index} /> 
-            </div>
-          )}
-        </div>
-
       </div>
     );
   }
